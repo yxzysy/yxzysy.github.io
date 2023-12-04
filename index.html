@@ -111,6 +111,18 @@
 5.网站地址 https://yxzysy.github.io/
 6.库地址   https://github.com/yxzysy/yxzysy.github.io
 </code></pre>
+<hr />
+<p>*不用xcopy命令直接copy整个文件夹:</p>
+<pre><code>set source_folder=site
+set destination_folder=../yxzysy.github.io
+for /f "delims=" %%i in ('dir /b /s "%source_folder%"') do (
+   if exist "%source_folder%\%%~nxi/" (
+       md "%destination_folder%\%%~nxi"
+   )   else (
+       copy "%%i" "%destination_folder%\%%~nxi"
+   )
+)
+</code></pre>
 <p><img alt="img.png" src="../img.png" />
 <img alt="img_1.png" src="../img_1.png" /></p>
 <h3 id="_4">命令</h3>
