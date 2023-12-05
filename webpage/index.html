@@ -112,17 +112,30 @@
 6.库地址   https://github.com/yxzysy/yxzysy.github.io
 </code></pre>
 <hr />
-<p>*不用xcopy命令直接copy整个文件夹:</p>
-<pre><code>set source_folder=site
-set destination_folder=../yxzysy.github.io
-for /f "delims=" %%i in ('dir /b /s "%source_folder%"') do (
-   if exist "%source_folder%\%%~nxi/" (
-       md "%destination_folder%\%%~nxi"
-   )   else (
-       copy "%%i" "%destination_folder%\%%~nxi"
-   )
-)
+<p>localrun.bat脚本  </p>
+<pre><code>set path=c:\Python37;c:\Python37\Scripts
+set PYTHONUSERBASE=c:\Python37
+mkdocs serve
 </code></pre>
+<p>publish.bat脚本</p>
+<pre><code>set path=c:\Python37;c:\Python37\Scripts
+set PYTHONUSERBASE=c:\Python37
+cd c:\Python37
+mkdocs build
+</code></pre>
+<p>mkdocs.yml文件</p>
+<pre><code>site_name: AI Tools Gallery
+site_dir: ../yxzysy.github.io
+theme:
+  name: united
+  locale: cn
+  static_templates:
+    - sitemap.html
+  include_sidebar: true
+</code></pre>
+<blockquote>
+<p>site_dir指定发布到的文件夹</p>
+</blockquote>
 <p><img alt="img.png" src="../img.png" />
 <img alt="img_1.png" src="../img_1.png" /></p>
 <h3 id="_4">命令</h3>
