@@ -85,6 +85,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#_3" class="nav-link">文字写作</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -97,19 +101,58 @@
 <table>
 <thead>
 <tr>
-<th>***</th>
-<th>***</th>
-<th>***</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>张三</td>
-<td>李四</td>
+<td><a href="https://showlab.github.io/magicanimate/">字节magicanimate</a></td>
+<td><a href="https://humanaigc.github.io/animate-anyone/">阿里animate-anyone</a></td>
 <td>王五</td>
+<td></td>
+</tr>
+<tr>
+<td>+生成动作视频<br>+colab测试(见1)<br>+文章代码demo</td>
+<td>+生成动作视频<br>+文章代码demo</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<hr />
+<p>1.magicanimate测试代码<a href="https://colab.research.google.com/github/camenduru/MagicAnimate-colab/blob/main/MagicAnimate_colab.ipynb">colab</a></p>
+<pre><code>%cd /content
+!git clone -b dev https://github.com/camenduru/MagicAnimate-hf
+
+!pip install -q diffusers==0.21.4 transformers==4.32.0 accelerate==0.22.0 omegaconf==2.3.0 einops==0.6.1 av gradio
+!pip install -q https://download.pytorch.org/whl/cu118/xformers-0.0.22.post4%2Bcu118-cp310-cp310-manylinux2014_x86_64.whl
+
+!apt -y install -qq aria2
+BaseModelUrl = "https://huggingface.co/runwayml/stable-diffusion-v1-5"
+BaseModelDir = "/content/MagicAnimate-hf/stable-diffusion-v1-5"
+!aria2c --console-log-level=error -c -x 16 -s 16 -k 1M {BaseModelUrl}/raw/main/model_index.json -d {BaseModelDir} -o model_index.json
+!aria2c --console-log-level=error -c -x 16 -s 16 -k 1M {BaseModelUrl}/resolve/main/vae/diffusion_pytorch_model.bin -d {BaseModelDir}/vae -o diffusion_pytorch_model.bin
+!aria2c --console-log-level=error -c -x 16 -s 16 -k 1M {BaseModelUrl}/raw/main/vae/config.json -d {BaseModelDir}/vae -o config.json
+!aria2c --console-log-level=error -c -x 16 -s 16 -k 1M {BaseModelUrl}/resolve/main/unet/diffusion_pytorch_model.bin -d {BaseModelDir}/unet -o diffusion_pytorch_model.bin
+!aria2c --console-log-level=error -c -x 16 -s 16 -k 1M {BaseModelUrl}/raw/main/unet/config.json -d {BaseModelDir}/unet -o config.json
+!aria2c --console-log-level=error -c -x 16 -s 16 -k 1M {BaseModelUrl}/raw/main/tokenizer/vocab.json -d {BaseModelDir}/tokenizer -o vocab.json
+!aria2c --console-log-level=error -c -x 16 -s 16 -k 1M {BaseModelUrl}/raw/main/tokenizer/tokenizer_config.json -d {BaseModelDir}/tokenizer -o tokenizer_config.json
+!aria2c --console-log-level=error -c -x 16 -s 16 -k 1M {BaseModelUrl}/raw/main/tokenizer/special_tokens_map.json -d {BaseModelDir}/tokenizer -o special_tokens_map.json
+!aria2c --console-log-level=error -c -x 16 -s 16 -k 1M {BaseModelUrl}/raw/main/tokenizer/merges.txt -d {BaseModelDir}/tokenizer -o merges.txt
+!aria2c --console-log-level=error -c -x 16 -s 16 -k 1M {BaseModelUrl}/resolve/main/text_encoder/pytorch_model.bin -d {BaseModelDir}/text_encoder -o pytorch_model.bin
+!aria2c --console-log-level=error -c -x 16 -s 16 -k 1M {BaseModelUrl}/raw/main/text_encoder/config.json -d {BaseModelDir}/text_encoder -o config.json
+!aria2c --console-log-level=error -c -x 16 -s 16 -k 1M {BaseModelUrl}/raw/main/scheduler/scheduler_config.json -d {BaseModelDir}/scheduler -o scheduler_config.json
+!aria2c --console-log-level=error -c -x 16 -s 16 -k 1M {BaseModelUrl}/resolve/main/safety_checker/pytorch_model.bin -d {BaseModelDir}/safety_checker -o pytorch_model.bin
+!aria2c --console-log-level=error -c -x 16 -s 16 -k 1M {BaseModelUrl}/raw/main/safety_checker/config.json -d {BaseModelDir}/safety_checker -o config.json
+!aria2c --console-log-level=error -c -x 16 -s 16 -k 1M {BaseModelUrl}/raw/main/feature_extractor/preprocessor_config.json -d {BaseModelDir}/feature_extractor -o preprocessor_config.json
+
+%cd /content/MagicAnimate-hf
+!python app.py
+</code></pre>
+<hr />
 <h2 id="_2">图片处理</h2>
 <table>
 <thead>
@@ -128,9 +171,29 @@
 <td>无</td>
 </tr>
 <tr>
-<td>+自动美化图片<br>+收费<br>+无评价</td>
+<td>+自动美化图片<br>+收费<br>+</td>
 <td>+画草图得真图<br>+免费<br>+Client<br>+MacOS</td>
 <td>+图片换脸<br>+免费<br>+APP&amp;Client<br>+win&amp;Android&amp;iOS</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_3">文字写作</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 </tr>
 </tbody>
@@ -217,5 +280,5 @@
 
 <!--
 MkDocs version : 1.5.3
-Build Date UTC : 2023-12-05 19:50:05.667177+00:00
+Build Date UTC : 2023-12-05 21:23:46.360619+00:00
 -->
