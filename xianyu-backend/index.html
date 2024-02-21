@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Xianyu backend - AI Tools Gallery</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">AI Tools Gallery</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">New AI Tools</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../aiedun/" class="nav-link">New AI Edu</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">项目介绍</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">网站导航</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#_3" class="nav-link">项目模块</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#_4" class="nav-link">项目流程</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#_5" class="nav-link">快速启动</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#_8" class="nav-link">项目选型</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#_11" class="nav-link">前端展示</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 align="center">咸鱼API开放平台</h1>
+<p align="center"><strong>一个提供API接口供开发者调用的平台 </strong></p>
+
+<h2 id="_1">项目介绍</h2>
+<p><strong>用户可以注册登录，浏览咸鱼API列表，可以开通接口获取一定的调用次数，能够查看已开通的接口以及剩余调用次数。支持接口在线调试，支持接口聚合搜索。</strong></p>
+<p><strong>提供了<a href="https://github.com/xianyu2023/XianYuOpenApi-client-sdk-user">客户端SDK: XianYuOpenApi-client-sdk-user</a>供开发者使用，并支持starter依赖引入，能够让开发者轻松地在项目中调用接口。用户设置页可获取签名密钥用于客户端SDK调用接口</strong></p>
+<p><strong>管理员可以管理平台的所有接口以及用户，支持接口上线、下线、统计分析等功能，可视化接口TOP N的调用情况。</strong></p>
+<h2 id="_2">网站导航</h2>
+<ul>
+<li><a href="https://github.com/xianyu2023/xianYuApi_backend"><strong>咸鱼API开放平台 后端</strong></a></li>
+<li>
+<p><a href="https://github.com/xianyu2023/xianYuApi_front"><strong>咸鱼API开放平台 前端</strong>️</a></p>
+</li>
+<li>
+<p><strong><a href="https://github.com/xianyu2023/XianYuOpenApi-client-sdk-user">XianYuOpenApi-client-sdk-user</a></strong> 🛠</p>
+</li>
+</ul>
+<h2 id="_3">项目模块</h2>
+<table>
+<thead>
+<tr>
+<th>目录</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="https://github.com/xianyu2023/xianYuApi_backend">xianYuApi_backend</a></strong></td>
+<td>平台后端服务模块</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/xianyu2023/xianYuApi_backend/tree/master/xianyu-common">xianyu-common</a></strong></td>
+<td>公共服务模块</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/xianyu2023/xianYuApi_backend/tree/master/xianyu-gateway">xianyu-gateway</a></strong></td>
+<td>网关模块</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/xianyu2023/xianYuApi_backend/tree/master/Open_Api">Open_Api</a></strong></td>
+<td>模拟接口模块</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/xianyu2023/XianYuOpenApi-client-sdk-user">XianYuOpenApi-client-sdk-user</a></strong></td>
+<td>开发者用SDK</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/xianyu2023/XianYuOpenApi-client-sdk-admin">XianYuOpenApi-client-sdk-admin</a></strong></td>
+<td>仅平台内部用SDK</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_4">项目流程</h2>
+<p><img alt="img.png" src="doc/img_00.png" /></p>
+<h2 id="_5">快速启动</h2>
+<h3 id="_6">前端</h3>
+<p>环境要求：Node.js = 18.16</p>
+<p>安装依赖：</p>
+<pre><code>yarn or  npm install
+</code></pre>
+<p>启动：</p>
+<pre><code>yarn run dev or npm run start:dev
+</code></pre>
+<p>部署：</p>
+<pre><code>yarn build or npm run build
+</code></pre>
+<h3 id="_7">后端</h3>
+<p>执行sql目录下ddl.sql创建库表</p>
+<h2 id="_8">项目选型</h2>
+<h3 id="_9"><strong>后端</strong></h3>
+<ul>
+<li>Spring Boot 2.7.0</li>
+<li>Spring MVC</li>
+<li>MySQL 数据库</li>
+<li>Dubbo 分布式（RPC、Nacos）</li>
+<li>Spring Cloud Gateway 微服务网关</li>
+<li>API 签名认证（Http 调用）</li>
+<li>Swagger + Knife4j 接口文档</li>
+<li>Spring Boot Starter（SDK 开发）</li>
+<li>Spring Data Redis 分布式登录</li>
+<li>聚合搜索服务（包含门面模式、适配器模式、注册器模式等设计模式）</li>
+<li>Jsoup数据抓取</li>
+<li>ElasticSearch搜索引擎</li>
+<li>数据同步（Logstash、Canal）</li>
+<li>Apache Commons Lang3 工具类</li>
+<li>MyBatis-Plus 及 MyBatis X 自动生成</li>
+<li>Hutool、Apache Common Utils、Gson 等工具库</li>
+</ul>
+<h3 id="_10">前端</h3>
+<ul>
+<li>
+<p>React 18</p>
+</li>
+<li>
+<p>Ant Design Pro 5.x 脚手架</p>
+</li>
+<li>
+<p>Ant Design &amp; Procomponents 组件库</p>
+</li>
+<li>
+<p>Umi 4 前端框架</p>
+</li>
+<li>
+<p>Umi Request请求工具 (Axios 的封装) </p>
+</li>
+<li>
+<p>OpenAPI 前端代码生成</p>
+</li>
+</ul>
+<h2 id="_11">前端展示</h2>
+<h3 id="_12">首页</h3>
+<p><img alt="img_2.png" src="doc/img_2.png" /></p>
+<h3 id="_13">接口详情</h3>
+<p><img alt="img_3.png" src="doc/img_3.png" /></p>
+<h3 id="_14">已开通接口页</h3>
+<p><img alt="img_4.png" src="doc/img_4.png" /></p>
+<h3 id="_15">用户设置页</h3>
+<p><img alt="img_5.png" src="doc/img_5.png" /></p>
+<h3 id="_16">管理页</h3>
+<h4 id="api">API管理</h4>
+<p><img alt="img_6.png" src="doc/img_6.png" /></p>
+<h4 id="api_1">API调用次数统计</h4>
+<p><img alt="img_7.png" src="doc/img_7.png" /></p>
+<h4 id="_17">用户管理</h4>
+<p><img alt="img_8.png" src="doc/img_8.png" /></p>
+<h3 id="_18">登录/注册</h3>
+<p><img alt="login.png" src="doc/img.png" />
+<img alt="register.png" src="doc/img_1.png" /></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

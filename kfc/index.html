@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>微信小程序学习 起手式DEMO仿肯德基（持续更新中。。。） - AI Tools Gallery</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">AI Tools Gallery</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">New AI Tools</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../aiedun/" class="nav-link">New AI Edu</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#demo" class="nav-link">微信小程序学习 起手式DEMO仿肯德基（持续更新中。。。）</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">小程序</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_4" class="nav-link">用到的工具和文档：</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_5" class="nav-link">目录结构</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_7" class="nav-link">数据模拟</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#api_1" class="nav-link">地图API的使用</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_9" class="nav-link">购物车部分实现</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_13" class="nav-link">页面传值</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_15" class="nav-link">未完待续....</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="demo">微信小程序学习 起手式DEMO仿肯德基（持续更新中。。。）</h1>
+<h2 id="_1">小程序</h2>
+<h3 id="_2">官网介绍：</h3>
+<p>微信小程序是一种全新的连接用户与服务的方式，它可以在微信内被便捷地获取和传播，同时具有出色的使用体验。
+小程序的便捷注定它以后会有一定的伸展空间，了解之后我觉得它似乎就是一个html5的典型应用，其中的.wxml文件里放置相应page的html，用view、scoll-view代替了div标签，还有一些其他功能标签。</p>
+<h3 id="api">简直不敢回扒肯德基api那个夜晚时的心情好吗...</h3>
+<h3 id="_3">完成的功能：</h3>
+<p>附近位置选择-联动菜单导航-模拟数据-抽屉式购物车-获取用户微信信息-页面传值-数据生成订单</p>
+<p>直接点餐会自动为你找到最近的餐厅，不过离最近的kfc太远的不太行</p>
+<h2 id="_4">用到的工具和文档：</h2>
+<ol>
+<li><strong>开发调试工具:</strong>   <a href="https://mp.weixin.qq.com/debug/wxadoc/dev/">微信小程序平台教程</a>,安装好最基本的啦！稍微过一遍简易文档。</li>
+<li><strong>开发‘字典’文档:</strong>  <a href="https://www.w3cschool.cn/weixinapp/9wou1q8j.html">微信小程序开发教程手册文档</a>功能使用方法都在上面挺全的。通过
+  阅读文档了解页面的搭建、页面路由、导航跳转、数据绑定、条件渲染、列表渲染、scroll-view、request、radio、modal、toast、map、位置、数据缓存、动画、验证信息。</li>
+<li><strong>easy-mock:</strong>  <a href="www.easy-mock.com">easy-mock</a>模拟后端数据，后面会简单介绍配置。</li>
+<li><strong>腾讯地图API:</strong>   <a href="http://lbs.qq.com/qqmap_wx_jssdk/index.html">腾讯地图小程序</a>有地点搜索、关键词输入提示、逆地址解析(坐标位置描述)地址解析(地址转坐标)距离计算、获取城市列表、获取城市区县的一步配置教程。</li>
+<li><strong>WeUI</strong>  <a href="https://github.com/weui/weui-wxss">WeUI github</a>微信专用的结构样式组件库，加速开发速度，BEM规范代码，增强可读性</li>
+</ol>
+<h2 id="_5">目录结构</h2>
+<pre><code>├── app.js
+├── app.json
+├── app.wxss
+├── pages
+│   ├── .DS_Store
+│   ├── KFC
+│   │   ├── KFC.js
+│   │   ├── KFC.wxml
+│   │   └── KFC.wxss
+│   ├── card
+│   │   ├── card.js
+│   │   ├── card.wxml
+│   │   └── card.wxss
+│   ├── halladdress
+│   │   ├── .DS_Store
+│   │   ├── halladdress.js
+│   │   ├── halladdress.wxml
+│   │   └── halladdress.wxss
+│   ├── index
+│   │   ├── index.js
+│   │   ├── index.wxml
+│   │   └── index.wxss
+│   ├── logs
+│   │   ├── logs.js
+│   │   ├── logs.json
+│   │   ├── logs.wxml
+│   │   └── logs.wxss
+│   ├── menu
+│   │   ├── index.html
+│   │   ├── menu.js
+│   │   ├── menu.wxml
+│   │   └── menu.wxss
+│   ├── order
+│   │   ├── order.js
+│   │   ├── order.wxml
+│   │   └── order.wxss
+│   └── takeout
+│       ├── message
+│       │   ├── message.js
+│       │   ├── message.wxml
+│       │   └── message.wxss
+│       ├── qqmap-wx-jssdk.min.js
+│       ├── takeout.js
+│       ├── takeout.wxml
+│       └── takeout.wxss
+├── style
+│   ├── .DS_Store
+│   └── weui.wxss
+└── utils
+    └── util.js
+</code></pre>
+<h4 id="_6">页面注册</h4>
+<h4 id="appjson">app.json</h4>
+<pre><code>    "pages": [
+    "pages/index/index",   // 首页
+    "pages/KFC/KFC",       // K金商城页
+    "pages/menu/menu",     // 菜单页
+    "pages/card/card",     // 卡包页
+    "pages/order/order",   // 订单页
+    "pages/takeout/takeout",  // 外卖地图页
+    "pages/takeout/message/message", // 填写外卖信息页
+    "pages/halladdress/halladdress", // 附近餐厅页
+    "pages/logs/logs" // 日志页
+    ]
+</code></pre>
+<p>我们可以通过官网的文档或W3C教程上初始化了一个小程序目录，小程序的每个页面都放在pages目录下
+每次添加一个新页面，都需要先在app.json.page下注册。</p>
+<h2 id="_7">数据模拟</h2>
+<p>前后端分离，mock.js 用它来模拟KFC数据
+我的学习资源
+1. <a href="https://i.jakeyu.top/2016/08/19/mockjs%E8%AE%A9%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B8%8D%E4%BE%9D%E8%B5%96%E5%90%8E%E7%AB%AF/">mockjs前端开发独立于后端</a>
+2. <a href="https://juejin.im/post/58ff1fae61ff4b0066792f6e">掘金：easy-mock</a>
+3. <a href="https://juejin.im/post/58f9eec0a22b9d00658ee4b7">mock.js那点事</a></p>
+<h3 id="easymock">easy—mock创建数据</h3>
+<p>因为菜单中每个左侧的分类对应一组数据，在右侧也需要渲染类名，因此简单模拟结构</p>
+<pre><code>[{ "title": "这里放左边列表的组名",
+
+   "foodsIndex": [{
+
+   "name": "每个食物的名字",
+
+   "price": "11.0",
+
+   "url": "http://imgm.4008823823.com.cn/kfcmwos/img//S/269_116012.jpg"
+
+  },
+
+ {...},{...},{...}]
+</code></pre>
+<p>内容可以扒<a href="https://m.4008823823.com.cn/kfcmwos/menu.htm?classId=116">肯德基点餐</a>，或者用我扒好的[肯德基API]</p>
+<h2 id="api_1">地图API的使用</h2>
+<p><strong>用toast优化耗时加载</strong></p>
+<pre><code> wx.showToast({
+    title: '地图加载中',
+    icon: 'loading',
+    duration: 0,
+    mask: true
+</code></pre>
+<p>})</p>
+<p><strong>画图完成后用回调将Toast去除</strong></p>
+<pre><code class="language-javascript">    this.mapCtx = wx.createMapContext('myMap', function () {
+        wx.hideToast();
+    })
+</code></pre>
+<p>WXML:</p>
+<pre><code class="language-html">       &lt;map id=&quot;myMap&quot; longitude=&quot;{{longitude}}&quot; latitude=&quot;{{latitude}}&quot;
+             style=&quot;width: 100%; height: 100%&quot; markers=&quot;{{markers}}&quot; covers=&quot;{{covers}}&quot; scale=&quot;18&quot;&gt;
+       &lt;/map&gt;
+</code></pre>
+<h3 id="api_2">腾讯地图API使用</h3>
+<p>以搜附近地点渲染至页面列表为例
+1. 引入核心类
+ <a href="http://lbs.qq.com/qqmap_wx_jssdk/index.html">腾讯地图小程序版</a>下载js并获取key
+ <code>javascript
+     let QQMapWX = require('qqmap-wx-jssdk.min.js');
+     let demo = new QQMapWX({
+            key: '5Q2BZ-O3W24-V6DUN-DZ4Z7-H427K-WCB7R' // 必填
+     });</code></p>
+<ol>
+<li>调用API<a href="http://lbs.qq.com/qqmap_wx_jssdk/method-reverseGeocoder.html">reverseGeocoder</a></li>
+</ol>
+<pre><code class="language-javascript">     demo.reverseGeocoder({
+               location: {
+                 latitude: _latitude,
+                 longitude: _longitude
+               },
+               get_poi: 1,
+               success: function (res) {
+                 //         console.log(res);
+               },
+               fail: function (res) {
+                 console.log(res);
+               },
+               complete: function (res) {
+                 console.log(res);
+                 that.setData({
+                   pois: res.result.pois
+                 })
+               }
+             });
+</code></pre>
+<p>通过setData() 我们的数据就传到data上去中了便用此渲染页面上去，that保持对原page对象的引用哟</p>
+<pre><code class="language-javascript">          &lt;view class=&quot;address-item&quot; wx:for=&quot;{{pois}}&quot; wx:for-item=&quot;poi&quot; 
+             data-name=&quot;{{poi.address}}&quot; catchtap=&quot;ToDetailPage&quot;&gt;
+             &lt;image src=&quot;../../image/position.png&quot; data-name=&quot;{{poi.address}}&quot; 
+                catchtap=&quot;ToDetailPage&quot;&gt;&lt;/image&gt;
+             &lt;text catchtap=&quot;ToDetailPage&quot; data-name=&quot;{{poi.address}}&quot;&gt;{{poi.address}}&lt;/text&gt;
+           &lt;/view&gt;
+</code></pre>
+<h3 id="_8">地名搜索</h3>
+<p>以搜周围的KFC为例</p>
+<pre><code class="language-javascript">        demo.search({
+          keyword: '肯德基',
+          location: {
+            latitude: _latitude,
+            longitude: _longitude
+          },
+          success: function (res) {
+            // console.log(res);
+          },
+          fail: function (res) {
+            // console.log(res);
+          },
+          complete: function (res) {
+            console.log(res.data[0].location.lat,res.data[0].location.lng)
+            console.log(res.data[0])
+            // .address._distance
+            that.setData({
+              poi: res.data[0].address,
+              distance: res.data[0]._distance,
+              latitude: res.data[0].location.lat,
+              longitude: res.data[0].location.lng,
+              markers: [{
+                latitude: res.data[0].location.lat,
+                longitude: res.data[0].location.lng,
+                name: 'KFC',
+                desc: 'KFC在您身边'
+              }]
+            })
+          }
+        });
+</code></pre>
+<p>通过setData改变data从而让页面显示当前kfc，没有用输入框搜索，用设置的自动搜索</p>
+<h2 id="_9">购物车部分实现</h2>
+<h3 id="_10">需要实现的功能：</h3>
+<ol>
+<li>侧nav与内容区的联动 </li>
+<li>商品的增减改变总价格并弹出购物车和抽屉详细面板</li>
+<li>抽屉的动画</li>
+<li>在抽屉面板中改变商品数量，没有则隐藏组件</li>
+</ol>
+<h3 id="_11">具体实现过程</h3>
+<p>左边点击菜单的不同种类，右边转到相应的的内容  用到了<a href="https://www.w3cschool.cn/weixinapp/weixinapp-scroll-view.html">scroll-view的API</a>
+给每个右边的内容对象渲染时附上id
+ <code>html
+ &lt;view class="food-list" wx:for="{{foodArray}}" wx:for-item="item" id="foodtype{{index}}"&gt;</code>
+ 再给每个nav的点击事件dataset解析一下
+ <code>javascript
+ let goPage = e.currentTarget.id
+ this.setData({
+      scroll_into_view: "foodtype" + goPage
+    })</code>
+ ### 抽屉式购物车</p>
+<p>目前的做法是给每个商品都赋了一个dataset，以便点击不同的商品让不同的对象进入购物车数组,通过e.target.dataset拿到，有考虑到利用事件的冒泡来优化加载，下一步尝试
+ <code>javascript
+  // 是否有同种商品判断
+    if (this.data.shoppingList.length &gt; 0) {
+      // 商品名是否相同判断，不重复添加同名商品，但是商品数量改变
+      let isHave = this.data.shoppingList.findIndex(item =&gt; item.name == e.target.dataset.name)
+      if (isHave != -1) {
+        that.data.shoppingList[isHave].num++
+      } else {
+        // 购物车数组加进新的一样食品
+        that.data.shoppingList.push({
+          price: e.target.dataset.price,
+          name: e.target.dataset.name,
+          num: itemNum
+        })
+        // 动画效果的长度添加
+        move_length++
+      }
+    // 没有商品时直接添加
+    } else {
+      this.data.shoppingList.push({
+        price: e.target.dataset.price,
+        name: e.target.dataset.name,
+        num: itemNum
+      })
+      move_length++
+    }</code></p>
+<h4 id="_12">动画的使用</h4>
+<p>可参照<a href="https://www.w3cschool.cn/weixinapp/tcga1qcz.html">API</a>
+我在这里是做了一个增加商品时，抽屉往上滚动，删除为空时抽屉向下滚动</p>
+<pre><code class="language-javascript">data: {
+    totalCount: 0,  // 购物车的总数量
+    movelength: 0,  // 上移或下拉动画的单位距离
+    cartIsHidden: true, // 购物车是否隐藏
+    cartIndexIsHidden: true, // 购物车详情菜单是否隐藏
+    animationData: {} // 动画动作对象
+    }
+ ```
+ 滚动动画初始设置
+ ```javascript
+let animation = wx.createAnimation({
+  duration: 400,
+  timingFunction: &quot;linear&quot;,
+  delay: 0
+});
+</code></pre>
+<p>动画产生的效果就以bottom的变化而产生
+ ```javascript
+let mlength = move_length * 55;
+    if (move_length &gt; 1) {
+      mlength = 55 + (move_length - 1) * 65;
+    }
+    this.animation = animation
+    animation.bottom(mlength).step()</p>
+<pre><code>加入动画序列，并设置好movelength
+```javascript
+this.setData({
+      animationData: animation.export()
+    })
+    this.setData({
+      shoppingList: shopping_list,
+      totalPrice: total_price,
+      totalCount: total_count,
+      // 购物车当有商品时弹出
+      cartIsHidden: false,
+      movelength: move_length
+    })
+  }
+</code></pre>
+<h2 id="_13">页面传值</h2>
+<h3 id="_14">目前了解的传值有三种：</h3>
+<ol>
+<li>设置全局的数据缓存<a href="https://www.w3cschool.cn/weixinapp/weixinapp-apidate.html">看这API</a></li>
+<li>url 附带字串传值</li>
+</ol>
+<p>参考<a href="https://juejin.im/post/5907f120b123db3ee48d2a4f">掘金微信小程序多页面传参通信</a></p>
+<ol>
+<li>引入事件订阅和发布onfire.js（准备了解）</li>
+</ol>
+<p>比如这个页面，它的所有数据都来之于之前的选择
+我在自己项目里目前用的是本地存储的方式，比如地址的设置获取
+在选择页设置本地存储</p>
+<pre><code class="language-javascript">let OrderAddress = {
+      address: [],
+      isHall: false 
+    }
+    //遍历去重
+    let item = OrderAddress.address.find(item=&gt;item==event.target.dataset.name)
+    if(!item){
+      OrderAddress.address.push(event.target.dataset.name)
+    }
+    wx.setStorage({
+      key: &quot;OrderAddress&quot;,
+      data: OrderAddress,
+    });
+    wx.navigateTo({
+      url:'/pages/takeout/message/message'
+    })
+</code></pre>
+<p>在订单页拿到地址</p>
+<pre><code class="language-javascript">wx.getStorage({
+      key: 'OrderAddress',
+      success: function (res) {
+        console.log(res.data);
+        that.setData({
+          address: res.data.address[0],
+          elementToggle: res.data.isHall
+        })
+      }
+    })
+</code></pre>
+<h2 id="_15">未完待续....</h2>
+<p>坑：页面内跳转不超过5级</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
